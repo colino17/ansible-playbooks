@@ -1,0 +1,8 @@
+[servers]
+beanserver
+cerberus
+heimdall
+
+[machines]
+manticore
+steambox
