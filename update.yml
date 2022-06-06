@@ -1,0 +1,9 @@
+---
+- name: update all hosts
+  hosts: servers machines
+  become: yes
+  tasks:
+    - name: full system upgrade
+      pacman:
+        update_cache: yes
+        upgrade: yes
