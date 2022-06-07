@@ -1,4 +1,18 @@
 ---
+- name: check updates
+  pacman: 
+   update_cache: yes
+   upgrade: yes
+   
+- name: Enable pacman colourised output and verbose package lists
+  replace:
+    path: /etc/pacman.conf
+    regexp: '{{ item.regexp }}'
+    replace: '{{ item.replace }}'
+  with_items:
+    - { regexp: '^#Color$', replace: 'Color' }
+    - { regexp: '^#VerbosePkgLists$', replace: 'VerbosePkgLists' }
+    
 - import_tasks: user.yml
 - import_tasks: applications.yml
 - import_tasks: audio.yml
