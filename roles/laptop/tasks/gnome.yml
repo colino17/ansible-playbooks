@@ -19,6 +19,7 @@
       - gvfs-mtp
       - mutter
       - gnome-tweaks
+      - cutefish-icons
   become: true
 
 - name: enable night-light
