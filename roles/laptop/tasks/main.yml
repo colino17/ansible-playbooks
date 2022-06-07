@@ -1,0 +1,4 @@
+---
+- import_tasks: applications.yml
+- import_tasks: audio.yml
+- import_tasks: gnome.yml
