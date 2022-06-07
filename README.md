@@ -76,3 +76,11 @@
 `genfstab -U /mnt >> /mnt/etc/fstab`
 
 `cat /mnt/etc/fstab`
+
+**Chroot Into System**
+
+`arch-chroot /mnt`
+
+**Pull Ansible Config**
+
+`ansible-pull -U https://github.com/colino17/ansible-playbooks.git`
