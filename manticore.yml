@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  roles:
+    - laptop
+  vars_prompt:
+    - name: "archlinux_username"
+      prompt: "Enter your system username"
+      private: false
+    - name: "archlinux_user_real_name"
+      prompt: "Enter your full real name"
+      private: false
+    - name: "archlinux_user_email"
+      prompt: "Enter your email address"
+      private: false
