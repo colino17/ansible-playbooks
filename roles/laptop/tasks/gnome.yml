@@ -107,21 +107,3 @@
   community.general.dconf:
     key: '/org/gnome/shell/favorite-apps'
     value: "['org.gnome.Nautilus.desktop', 'firefox.desktop', 'gimp.desktop', 'discord.desktop', 'steam.desktop']"
-    
-- name: configure gnome settings
-  community.general.dconf:
-    key:
-    value:
-    state:
-
-- name: configure gnome settings
-  community.general.dconf:
-    key:
-    value:
-    state:
-    
-- name: configure gnome settings
-  community.general.dconf:
-    key:
-    value:
-    state:
