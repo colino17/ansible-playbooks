@@ -1,13 +1,31 @@
 ---
-- name: add storage
+- name: create storage directory
+  file:
+    name: /Storage
+    state: directory
+    owner: "{{ archlinux_username }}"
+    group: users
+    mode: 0755
+  become: true
+  become_user: "{{ archlinux_username }}"
+- name: add storage mount
   mount:
     path: /Storage
     src: 192.168.0.17:/Storage
     fstype: nfs
     opts: _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min
     state: present
-    
-- name: add backup
+
+- name: create backup directory
+  file:
+    name: /Backup
+    state: directory
+    owner: "{{ archlinux_username }}"
+    group: users
+    mode: 0755
+  become: true
+  become_user: "{{ archlinux_username }}"
+- name: add backup mount
   mount:
     path: /Backup
     src: 192.168.0.18:/Backup
@@ -15,7 +33,16 @@
     opts: _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min
     state: present
     
-- name: add cctv
+- name: create cctv directory
+  file:
+    name: /CCTV
+    state: directory
+    owner: "{{ archlinux_username }}"
+    group: users
+    mode: 0755
+  become: true
+  become_user: "{{ archlinux_username }}"
+- name: add cctv mount
   mount:
     path: /CCTV
     src: 192.168.0.17:/CCTV
