@@ -1,0 +1,29 @@
+---
+- name: install utilities
+  pacman:
+    name:
+      - curl
+      - wget
+      - htop
+      - openssh
+      - rsync
+      - unzip
+      - nfs-utils
+      - ffmpeg
+      - neofetch
+      - tailscale
+      - android-tools
+  become: true
+
+- name: install applications
+  pacman:
+    name:
+      - firefox
+      - gprename
+      - celluloid
+      - yt-dlp
+      - gimp
+      - cmatrix
+      - discord
+      - code
+  become: true
