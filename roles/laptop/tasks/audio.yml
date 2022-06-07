@@ -1,0 +1,9 @@
+- name: install audio utilities
+  pacman:
+    name:
+      - pipewire
+      - pipewire-alsa
+      - pipewire-pulse
+      - wireplumber
+      - easyeffects
+  become: true
