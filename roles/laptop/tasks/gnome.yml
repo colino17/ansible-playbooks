@@ -1,0 +1,127 @@
+---
+- name: install gnome
+  pacman:
+    name:
+      - gnome-shell
+      - gnome-shell-extensions
+      - nautilus
+      - file-roller
+      - gnome-terminal
+      - gnome-tweak-tool
+      - gnome-remote-desktop
+      - gnome-control-center
+      - xdg-user-dirs-gtk
+      - gdm
+      - eog
+      - gvfs
+      - gvfs-google
+      - gvfs-nfs
+      - gvfs-mtp
+      - mutter
+      - gnome-tweaks
+  become: true
+
+- name: enable night-light
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/color/night-light-enabled'
+    value: 'true'
+
+- name: enable night-light automatic shedule
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/color/night-light-schedule-automatic'
+    value: 'true'
+
+- name: enable edge tiling
+  community.general.dconf:
+    key: 'org/gnome/mutter/edge-tiling'
+    value: 'true'
+
+- name: enable extensions
+  community.general.dconf:
+    key: '/org/gnome/shell/enabled-extensions'
+    value: "['places-menu@gnome-shell-extensions.gcampax.github.com']"
+    
+- name: define slots for custom bindings
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings'
+    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/']"
+
+- name: custom1 binding
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding'
+    value: "'<Super>e'"
+- name: custom1 command
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command'
+    value: "'nautilus'"
+- name: custom1 name
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name'
+    value: "'open-files'"
+
+- name: custom2 binding
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding'
+    value: "'<Super>w'"
+- name: custom2 command
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command'
+    value: "'firefox'"
+- name: custom2 name
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name'
+    value: "'open-browser'"
+
+- name: custom3 binding
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding'
+    value: "'<Super>d'"
+- name: custom3 command
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command'
+    value: "'discord'"
+- name: custom3 name
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name'
+    value: "'open-discord'"
+
+- name: custom4 binding
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/binding'
+    value: "'<Super>g'"
+- name: custom4 command
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/command'
+    value: "'gimp'"
+- name: custom4 name
+  community.general.dconf:
+    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/name'
+    value: "'open-gimp'"
+
+- name: close window command
+  community.general.dconf:
+    key: 'org/gnome/desktop/wm/keybindings/close'
+    value: "['<Super>q']"
+    
+- name: configure favorites
+  community.general.dconf:
+    key: '/org/gnome/shell/favorite-apps'
+    value: "['org.gnome.Nautilus.desktop', 'firefox.desktop', 'gimp.desktop', 'discord.desktop', 'steam.desktop']"
+    
+- name: configure gnome settings
+  community.general.dconf:
+    key:
+    value:
+    state:
+
+- name: configure gnome settings
+  community.general.dconf:
+    key:
+    value:
+    state:
+    
+- name: configure gnome settings
+  community.general.dconf:
+    key:
+    value:
+    state:
