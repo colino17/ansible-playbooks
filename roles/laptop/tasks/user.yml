@@ -1,0 +1,29 @@
+---
+- name: create normal user
+  user:
+    name: "{{ archlinux_username }}"
+    create_home: true
+    group: users
+    groups:
+      - wheel
+  become: true
+
+- name: create scripts directory
+  file:
+    name: /home/{{ archlinux_username }}/.scripts
+    state: directory
+    owner: "{{ archlinux_username }}"
+    group: users
+    mode: 0755
+  become: true
+  become_user: "{{ archlinux_username }}"
+  
+- name: create apps directory
+  file:
+    name: /home/{{ archlinux_username }}/.apps
+    state: directory
+    owner: "{{ archlinux_username }}"
+    group: users
+    mode: 0755
+  become: true
+  become_user: "{{ archlinux_username }}"
