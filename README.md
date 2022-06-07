@@ -11,11 +11,11 @@
 
 # Minimal Arch Install
 
-Verify the Boot Mode:
+**Verify the Boot Mode**
 
 `ls /sys/firmware/efi/efivars`
 
-Partition and Format Disks:
+**Partition and Format Disks**
 
 `fdisk -l`
 
@@ -25,7 +25,7 @@ Partition and Format Disks:
 
 `p`
 
-Create EFI Partition:
+**Create EFI Partition**
 
 `n`
 
@@ -39,7 +39,7 @@ Create EFI Partition:
 
 `1`
 
-Create System Partition:
+**Create System Partition**
 
 `n`
 
@@ -53,13 +53,13 @@ Create System Partition:
 
 `w`
 
-Format Partitions:
+**Format Partitions**
 
 `mkfs.fat -F 32 /dev/sda1`
 
 `mkfs.ext4 /dev/sda2`
 
-Mount Partitions:
+**Mount Partitions**
 
 `mount /dev/sda2 /mnt`
 
@@ -67,11 +67,11 @@ Mount Partitions:
 
 `mount /dev/sda1 /mnt/boot`
 
-Install Base Packages:
+**Install Base Packages**
 
 `pacstrap /mnt base linux linux-firmware ansible git`
 
-Generate FSTAB:
+**Generate FSTAB**
 
 `genfstab -U /mnt >> /mnt/etc/fstab`
 
