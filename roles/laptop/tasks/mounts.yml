@@ -1,0 +1,24 @@
+---
+- name: add storage
+  mount:
+    path: /Storage
+    src: 192.168.0.17:/Storage
+    fstype: nfs
+    opts: _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min
+    state: present
+    
+- name: add backup
+  mount:
+    path: /Backup
+    src: 192.168.0.18:/Backup
+    fstype: nfs
+    opts: _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min
+    state: present
+    
+- name: add cctv
+  mount:
+    path: /CCTV
+    src: 192.168.0.17:/CCTV
+    fstype: nfs
+    opts: _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min
+    state: present
